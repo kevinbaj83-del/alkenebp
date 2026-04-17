@@ -1,0 +1,285 @@
+import sympy as sp
+
+inf = sp.oo
+a = sp.symbols('a', positive=True)
+b = sp.symbols('b', positive=True)
+c = sp.symbols('c', positive=True)
+
+
+propene = sp.Matrix([
+    [0, c, inf],
+    [c, 0, 1],
+    [inf, 1, 0]
+])
+
+butene_1 = sp.Matrix([
+    [0, c, inf, inf],
+    [c, 0, 1, inf],
+    [inf, 1, 0, 1],
+    [inf, inf, 1, 0]
+])
+
+butene_2_E = sp.Matrix([
+    [0, 1, inf, inf],
+    [1, 0, b, inf],
+    [inf, b, 0, 1],
+    [inf, inf, 1, 0]
+])
+
+butene_2_Z = sp.Matrix([
+    [0, 1, inf, inf],
+    [1, 0, a, inf],
+    [inf, a, 0, 1],
+    [inf, inf, 1, 0]
+])
+
+pentene_1 = sp.Matrix([
+    [0, c, inf, inf, inf],
+    [c, 0, 1, inf, inf],
+    [inf, 1, 0, 1, inf],
+    [inf, inf, 1, 0, 1],
+    [inf, inf, inf, 1, 0]
+])
+
+pentadiene_13_3Z = sp.Matrix([
+    [0, c, inf, inf, inf],
+    [c, 0, 1, inf, inf],
+    [inf, 1, 0, a, inf],
+    [inf, inf, a, 0, 1],
+    [inf, inf, inf, 1, 0]
+])
+
+pentadiene_13_3E= sp.Matrix([
+    [0, c, inf, inf, inf],
+    [c, 0, 1, inf, inf],
+    [inf, 1, 0, b, inf],
+    [inf, inf, b, 0, 1],
+    [inf, inf, inf, 1, 0]
+])
+
+hexene_3_E = sp.Matrix([
+    [0, 1, inf, inf, inf, inf],
+    [1, 0, 1, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf],
+    [inf, inf, b, 0, 1, inf],
+    [inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexene_3_Z = sp.Matrix([
+    [0, 1, inf, inf, inf, inf],
+    [1, 0, 1, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf],
+    [inf, inf, a, 0, 1, inf],
+    [inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexadiene_13_3Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf],
+    [inf, inf, a, 0, 1, inf],
+    [inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexadiene_13_3E = sp.Matrix([
+    [0, c, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf],
+    [inf, inf, b, 0, 1, inf],
+    [inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexadiene_24_2E_4Z = sp.Matrix([
+    [0, 1, inf, inf, inf, inf],
+    [1, 0, b, inf, inf, inf],
+    [inf, b, 0, 1, inf, inf],
+    [inf, inf, 1, 0, a, inf],
+    [inf, inf, inf, a, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+hexadiene_24_2E_4E = sp.Matrix([
+    [0, 1, inf, inf, inf, inf],
+    [1, 0, b, inf, inf, inf],
+    [inf, b, 0, 1, inf, inf],
+    [inf, inf, 1, 0, b, inf],
+    [inf, inf, inf, b, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexadiene_24_2Z_4Z = sp.Matrix([
+    [0, 1, inf, inf, inf, inf],
+    [1, 0, a, inf, inf, inf],
+    [inf, a, 0, 1, inf, inf],
+    [inf, inf, 1, 0, a, inf],
+    [inf, inf, inf, a, 0, 1],
+    [inf, inf, inf, inf, 1, 0]
+])
+
+hexatriene_135_3Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf],
+    [inf, inf, a, 0, 1, inf],
+    [inf, inf, inf, 1, 0, c],
+    [inf, inf, inf, inf, c, 0]
+])
+
+hexatriene_135_3E = sp.Matrix([
+    [0, c, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf],
+    [inf, inf, b, 0, 1, inf],
+    [inf, inf, inf, 1, 0, c],
+    [inf, inf, inf, inf, c, 0]
+])
+heptadiene_13_3Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf, inf],
+    [inf, inf, a, 0, 1, inf, inf],
+    [inf, inf, inf, 1, 0, 1, inf],
+    [inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+heptadiene_13_3E = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf, inf],
+    [inf, inf, b, 0, 1, inf, inf],
+    [inf, inf, inf, 1, 0, 1, inf],
+    [inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+
+heptadiene_24_2Z_4E = sp.Matrix([
+    [0, 1, inf, inf, inf, inf, inf],
+    [1, 0, a, inf, inf, inf, inf],
+    [inf, a, 0, 1, inf, inf, inf],
+    [inf, inf, 1, 0, b, inf, inf],
+    [inf, inf, inf, b, 0, 1, inf],
+    [inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+heptadiene_24_2E_4E = sp.Matrix([
+    [0, 1, inf, inf, inf, inf, inf],
+    [1, 0, b, inf, inf, inf, inf],
+    [inf, b, 0, 1, inf, inf, inf],
+    [inf, inf, 1, 0, b, inf, inf],
+    [inf, inf, inf, b, 0, 1, inf],
+    [inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+
+heptatriene_135_3E_5Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf, inf],
+    [inf, inf, b, 0, 1, inf, inf],
+    [inf, inf, inf, 1, 0, a, inf],
+    [inf, inf, inf, inf, a, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+heptatriene_135_3E_5E = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf, inf],
+    [inf, inf, b, 0, 1, inf, inf],
+    [inf, inf, inf, 1, 0, b, inf],
+    [inf, inf, inf, inf, b, 0, 1],
+    [inf, inf, inf, inf, inf, 1, 0]
+])
+
+octadiene_13_3Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf, inf, inf],
+    [inf, inf, a, 0, 1, inf, inf, inf],
+    [inf, inf, inf, 1, 0, 1, inf, inf],
+    [inf, inf, inf, inf, 1, 0, 1, inf],
+    [inf, inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, inf, 1, 0]
+])
+
+octadiene_13_3E= sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf, inf],
+    [inf, 1, 0, b, inf, inf, inf, inf],
+    [inf, inf, b, 0, 1, inf, inf, inf],
+    [inf, inf, inf, 1, 0, 1, inf, inf],
+    [inf, inf, inf, inf, 1, 0, 1, inf],
+    [inf, inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, inf, 1, 0]
+])
+
+nonadiene_13_3Z = sp.Matrix([
+    [0, c, inf, inf, inf, inf, inf, inf, inf],
+    [c, 0, 1, inf, inf, inf, inf, inf, inf],
+    [inf, 1, 0, a, inf, inf, inf, inf, inf],
+    [inf, inf, a, 0, 1, inf, inf, inf, inf],
+    [inf, inf, inf, 1, 0, 1, inf, inf, inf],
+    [inf, inf, inf, inf, 1, 0, 1, inf, inf],
+    [inf, inf, inf, inf, inf, 1, 0, 1, inf],
+    [inf, inf, inf, inf, inf, inf, 1, 0, 1],
+    [inf, inf, inf, inf, inf, inf, inf, 1, 0]
+])
+
+matrices = [
+   	propene,
+	butene_1,
+	butene_2_E,
+	butene_2_Z,
+	pentene_1,
+	pentadiene_13_3Z,
+	pentadiene_13_3E,
+	hexene_3_E,
+	hexene_3_Z,
+	hexadiene_13_3Z,
+	hexadiene_13_3E,
+	hexadiene_24_2E_4Z,
+	hexadiene_24_2E_4E,
+	hexadiene_24_2Z_4Z,
+	hexatriene_135_3Z,
+	hexatriene_135_3E,
+	heptadiene_13_3Z,
+	heptadiene_13_3E,
+	heptadiene_24_2Z_4E,
+	heptadiene_24_2E_4E,
+	heptatriene_135_3E_5Z,
+	heptatriene_135_3E_5E,
+	octadiene_13_3Z,
+	octadiene_13_3E,
+	nonadiene_13_3Z
+]
+
+#floyd-warshall algo
+def shortest_path(matrix):
+    n = matrix.shape[0]
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                matrix[i, j] = sp.Min(matrix[i, j], matrix[i, k] + matrix[k, j])
+    return matrix
+
+#weighted weiner index
+def wiener(matrix):
+    weight = 0
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            weight += matrix[i,j]
+    return weight/2
+
+def weight_dictionary(matrices):
+    matrix_dict = {}
+    n = 0
+    for matrix in matrices:
+        n += 1
+        shortest_path(matrix)
+        weight = wiener(matrix)
+        matrix_dict[n] = weight
+    return matrix_dict
+
+print(weight_dictionary(matrices))
